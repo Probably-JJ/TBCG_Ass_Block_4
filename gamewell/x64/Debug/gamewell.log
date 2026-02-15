@@ -2,29 +2,33 @@
   IDSystem.cpp
   Input.cpp
   InputManager.cpp
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.h(6,9): warning C4005: 'KEY': macro redefinition
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244: 'initializing': conversion from '_Rep' to 'double', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:         with
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:         [
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:             _Rep=__int64
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:         ]
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(151,9): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp(156,140): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.h(6,9): warning C4005: 'KEY': macro redefinition
+  (compiling source file 'Input.cpp')
+      C:\Git\TBCG_Ass_Block_4\gamewell\Input.h(2,9):
+      see previous definition of 'KEY'
+  
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244: 'initializing': conversion from '_Rep' to 'double', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:         with
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:         [
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:             _Rep=__int64
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(28,96): warning C4244:         ]
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(151,9): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\InputManager.cpp(156,140): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Object.cpp
-E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\Object.cpp(158,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\Object.cpp(158,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\Object.cpp(158,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\Object.cpp(158,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Renderer.cpp
-E:\GitHub\TBCG_Ass_Block_4\gamewell\Renderer.cpp(33,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\Renderer.cpp(178,27): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\Renderer.cpp(33,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\Renderer.cpp(178,27): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   SDLSoundSystem.cpp
-E:\GitHub\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp(54,31): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-E:\GitHub\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp(66,29): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp(54,31): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Git\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp(66,29): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   Sound.cpp
   TextObject.cpp
   Generating Code...
-E:\GitHub\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp(70,1): warning C4715: 'SDLSoundSystem::LoadSFX': not all control paths return a value
+C:\Git\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp(70,1): warning C4715: 'SDLSoundSystem::LoadSFX': not all control paths return a value
 SDL2_ttf.lib(SDL2_ttf.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2_Mixer.lib(SDL2_mixer.dll); second definition ignored
 SDL2.lib(SDL2.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2_Mixer.lib(SDL2_mixer.dll); second definition ignored
-  gamewell.vcxproj -> E:\GitHub\TBCG_Ass_Block_4\x64\Debug\gamewell.lib
+  gamewell.vcxproj -> C:\Git\TBCG_Ass_Block_4\x64\Debug\gamewell.lib
