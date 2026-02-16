@@ -12,6 +12,7 @@ int main()
 	//mouse class
 	//enemy classes
 	//game class
+	//combat - death
 	//deck class
 	//class classes
 	//card class
@@ -25,6 +26,7 @@ int main()
 	
 	//test
 	Object* mouse = new Object("assets/Images/Wren_Bird.bmp", 0, 0, 32, 32, true); //create a child class of Entity, override the mouseover function
+	mouse->SetShouldCollide(true);
 	
 	Input inp;
 	Player* test = new Player(30, 30, *mouse, 100, 10, "assets/Images/Wren_Bird.bmp");
@@ -38,6 +40,7 @@ int main()
 
 		mouse->Update();
 		test->Update();
+
 		screen.Update();
 	}
 

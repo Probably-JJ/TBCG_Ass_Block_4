@@ -1,10 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\GitHub\\TBCG_Ass_Block_4\\",
+  "WorkspaceRootPath": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|E:\\GitHub\\TBCG_Ass_Block_4\\Game\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{064C1B97-30FF-4BE8-A76F-702A81D211B6}|gamewell\\gamewell.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\gamewell\\TextObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{064C1B97-30FF-4BE8-A76F-702A81D211B6}|gamewell\\gamewell.vcxproj|solutionrelative:gamewell\\TextObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Combat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\Combat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\AttackerEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\AttackerEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Combat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{149C667C-FF9E-4998-8455-E01F69ACD9E3}|Game\\Game.vcxproj|solutionrelative:Game\\Combat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +51,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "E:\\GitHub\\TBCG_Ass_Block_4\\Game\\main.cpp",
-              "RelativeDocumentMoniker": "Game\\main.cpp",
-              "ToolTip": "E:\\GitHub\\TBCG_Ass_Block_4\\Game\\main.cpp",
-              "RelativeToolTip": "Game\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAACAAAA",
+              "Title": "TextObject.cpp",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\gamewell\\TextObject.cpp",
+              "RelativeDocumentMoniker": "gamewell\\TextObject.cpp",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\gamewell\\TextObject.cpp",
+              "RelativeToolTip": "gamewell\\TextObject.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-10T21:23:49.388Z",
+              "WhenOpened": "2026-02-16T16:38:58.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AttackerEnemy.h",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\AttackerEnemy.h",
+              "RelativeDocumentMoniker": "Game\\AttackerEnemy.h",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\AttackerEnemy.h",
+              "RelativeToolTip": "Game\\AttackerEnemy.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-16T16:09:44.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Combat.h",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Combat.h",
+              "RelativeDocumentMoniker": "Game\\Combat.h",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Combat.h",
+              "RelativeToolTip": "Game\\Combat.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-16T15:42:25.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Combat.cpp",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Combat.cpp",
+              "RelativeDocumentMoniker": "Game\\Combat.cpp",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Combat.cpp",
+              "RelativeToolTip": "Game\\Combat.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-16T12:08:37.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Entity.h",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Entity.h",
+              "RelativeDocumentMoniker": "Game\\Entity.h",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Entity.h",
+              "RelativeToolTip": "Game\\Entity.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-16T12:08:59.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Entity.cpp",
+              "RelativeDocumentMoniker": "Game\\Entity.cpp",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Entity.cpp",
+              "RelativeToolTip": "Game\\Entity.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-16T11:38:38.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Player.h",
+              "RelativeDocumentMoniker": "Game\\Player.h",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Player.h",
+              "RelativeToolTip": "Game\\Player.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-16T11:19:20.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Player.cpp",
+              "RelativeDocumentMoniker": "Game\\Player.cpp",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\Player.cpp",
+              "RelativeToolTip": "Game\\Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-16T11:40:04.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\main.cpp",
+              "RelativeDocumentMoniker": "Game\\main.cpp",
+              "ToolTip": "C:\\Temp\\Wren Work\\TurnBasedCardGame\\Game\\main.cpp",
+              "RelativeToolTip": "Game\\main.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-16T11:13:49.415Z",
               "EditorCaption": ""
             }
           ]

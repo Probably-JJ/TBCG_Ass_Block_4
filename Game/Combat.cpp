@@ -6,6 +6,10 @@ void Combat::TurnAction()
 {
 	std::cout << "No Functionality Set" << std::endl;
 }
+bool Combat::QueryDead()
+{
+	return (currentHealth <= 0);
+}
 #pragma region Getters and Setters
 
 int Combat::GetMaxHealth()

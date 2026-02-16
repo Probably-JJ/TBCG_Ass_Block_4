@@ -1,8 +1,8 @@
 #include "Entity.h"
 
-Entity::Entity(int X, int Y, Object mouseObj, const char* imagePath) : posX(X), posY(Y), mouse(mouseObj), filePath (imagePath)
+Entity::Entity(int X, int Y, const Object& mouseObj, const char* imagePath) : posX(X), posY(Y), mouse(mouseObj), filePath (imagePath)
 {
-	
+	//dont automatically create visual component, would cause issues within child classes 
 }
 
 Entity::~Entity()
@@ -17,7 +17,7 @@ Object* Entity::CreateVisual(const char* filepath)
 
 void Entity::Init()
 {
-
+	//exists to be overriden with intial data for each entity
 }
 
 void Entity::Update()

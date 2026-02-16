@@ -7,6 +7,7 @@ public:
 	Combat(int health, int damage);
 
 	virtual void TurnAction();
+	bool QueryDead();
 	
 	int GetMaxHealth();
 	int GetCurrentHealth();

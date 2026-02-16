@@ -7,7 +7,7 @@
 class Entity
 {
 public:
-	Entity(int X, int Y, Object mouseObj, const char* imagePath);
+	Entity(int X, int Y, const Object& mouseObj, const char* imagePath);
 	~Entity();
 
 	virtual void Init();
@@ -20,7 +20,7 @@ public:
 	int GetPosX();
 	int GetPosY();
 
-	//returns a pointer to the Object component
+	//returns the visual object on screen
 	Object* GetDrawn();
 
 	//input values change the X and Y to the input positions
@@ -30,7 +30,7 @@ public:
 protected:
 	int posX;
 	int posY;
-	Object mouse;
+	const Object& mouse;
 	Object* visualComponent;
 	Input userInp;
 	const char* filePath;
