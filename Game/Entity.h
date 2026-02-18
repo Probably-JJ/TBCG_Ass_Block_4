@@ -1,20 +1,23 @@
 #pragma once
 #include <iostream>
 #include <string.h>
-#include "Object.h"
-#include "Input.h"
+
+
+class Object;
+class Input;
 
 class Entity
 {
 public:
-	Entity(int X, int Y, const Object& mouseObj, const char* imagePath);
+	Entity(int X, int Y, const Object& mouseObj, const char* imagePath, int size);
 	~Entity();
 
 	virtual void Init();
 	virtual Object* CreateVisual(const char* filepath);
 
 	//check if the mouse is over the object, allow for displaying extra data or extra functionality
-	virtual void OnMouse();
+	bool OnMouseClick(Object other);
+	bool OnMouseRelease();
 	virtual void Update();
 
 	int GetPosX();
@@ -30,9 +33,10 @@ public:
 protected:
 	int posX;
 	int posY;
+	int objSize;
 	const Object& mouse;
 	Object* visualComponent;
-	Input userInp;
 	const char* filePath;
+	Input* userInp;
 
 };

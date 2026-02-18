@@ -1,6 +1,8 @@
 #include "Entity.h"
+#include "Object.h"
+#include "Input.h"
 
-Entity::Entity(int X, int Y, const Object& mouseObj, const char* imagePath) : posX(X), posY(Y), mouse(mouseObj), filePath (imagePath)
+Entity::Entity(int X, int Y, const Object& mouseObj, const char* imagePath, int size) : posX(X), posY(Y), mouse(mouseObj), filePath (imagePath), objSize(size)
 {
 	//dont automatically create visual component, would cause issues within child classes 
 }
@@ -12,7 +14,7 @@ Entity::~Entity()
 
 Object* Entity::CreateVisual(const char* filepath)
 {
-	return visualComponent = new Object(filepath, GetPosX(), GetPosY(), 1, 1, false);
+	return visualComponent = new Object(filepath, GetPosX(), GetPosY(), objSize, objSize, true);
 }
 
 void Entity::Init()
@@ -23,7 +25,7 @@ void Entity::Init()
 void Entity::Update()
 {
 	visualComponent->Update();
-	OnMouse();
+	OnMouseClick(mouse);
 
 }
 
@@ -48,11 +50,30 @@ void Entity::SetPos(int X, int Y)
 	posY = Y;
 }
 
-void Entity::OnMouse()
+bool Entity::OnMouseClick(Object other)
 {
-	if(visualComponent->IsOverlapping(mouse))
+	if(other.IsOverlapping(mouse) && userInp->GetMouseDown(LEFTMOUSEBUTTON))
 	{
-		std::cout << "Mouse is over an Entity" << std::endl;
+		std::cout << "Clicked an Entity" << std::endl;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+bool Entity::OnMouseRelease()
+{
+	if (userInp->GetMouseUp(LEFTMOUSEBUTTON))
+	{
+		std::cout << "Unclicked" << std::endl;
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 

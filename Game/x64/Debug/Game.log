@@ -1,6 +1,2 @@
-﻿  AttackerEnemy.cpp
-  Entity.cpp
-  Player.cpp
-  main.cpp
-  Generating Code...
+﻿  Entity.cpp
   Game.vcxproj -> C:\Temp\Wren Work\TurnBasedCardGame\x64\Debug\Game.exe

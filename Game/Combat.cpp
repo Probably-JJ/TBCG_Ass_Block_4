@@ -6,11 +6,21 @@ void Combat::TurnAction()
 {
 	std::cout << "No Functionality Set" << std::endl;
 }
+
+void Combat::TakeDamage(int damage)
+{
+	currentHealth -= damage;
+}
+
+void Combat::SetDamage(int damage)
+{
+	attackDamage = damage;
+}
+
 bool Combat::QueryDead()
 {
 	return (currentHealth <= 0);
 }
-#pragma region Getters and Setters
 
 int Combat::GetMaxHealth()
 {
@@ -26,15 +36,3 @@ int Combat::GetAttackDamage()
 {
 	return attackDamage;
 }
-
-void Combat::SetCurrentHealth(int health)
-{
-	currentHealth = health;
-}
-
-void Combat::SetDamage(int damage)
-{
-	attackDamage = damage;
-}
-
-#pragma endregion

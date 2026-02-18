@@ -3,8 +3,9 @@
 
 /// Note: These have been known to change from SDL version to version.
 /// If the mouse input isn't working, change these to 1 and 2 respectively. 
-#define LEFTMOUSEBUTTON 0
-#define RIGHTMOUSEBUTTON 1
+#define LEFTMOUSEBUTTON 1
+#define MIDDLEMOUSEBUTTON 1
+#define RIGHTMOUSEBUTTON 3
 
 #define KEY_LEFT (80 | (1<<30))
 #define KEY_RIGHT (79 | (1<<30))

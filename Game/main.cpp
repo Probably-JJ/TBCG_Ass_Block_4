@@ -5,14 +5,18 @@
 
 #include "Gamewell_api.h"
 #include "Player.h"
+#include "Enemy.h"
 
 int main()
 {
 	//TODO:
-	//mouse class
-	//enemy classes
+	//add tags to enemies
+	//make different action function based on tag
 	//game class
+	//game - turn cycle
 	//combat - death
+	// 
+	// 
 	//deck class
 	//class classes
 	//card class
@@ -29,7 +33,9 @@ int main()
 	mouse->SetShouldCollide(true);
 	
 	Input inp;
-	Player* test = new Player(30, 30, *mouse, 100, 10, "assets/Images/Wren_Bird.bmp");
+	//screen is 1280 x 720
+	Enemy* testEnemy = new Enemy(954, 232, *mouse, 100, 10, "assets/Images/Wren_Evil.bmp", 256);
+	Player* testPlay = new Player(70, 232, *mouse, 100, 10, "assets/Images/Wren_Bird.bmp", 256);
 	int x, y;
 
 
@@ -39,7 +45,8 @@ int main()
 		mouse->SetPosition(x, y);
 
 		mouse->Update();
-		test->Update();
+		testPlay->Update();
+		testEnemy->Update();
 
 		screen.Update();
 	}
