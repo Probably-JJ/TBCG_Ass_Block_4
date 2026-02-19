@@ -24,9 +24,8 @@ void Entity::Init()
 
 void Entity::Update()
 {
-	visualComponent->Update();
-	OnMouseClick(mouse);
-
+	GetDrawn()->Update();
+	OnMouseClick(GetDrawn());
 }
 
 int Entity::GetPosX()
@@ -50,11 +49,11 @@ void Entity::SetPos(int X, int Y)
 	posY = Y;
 }
 
-bool Entity::OnMouseClick(Object other)
+bool Entity::OnMouseClick(Object* other)
 {
-	if(other.IsOverlapping(mouse) && userInp->GetMouseDown(LEFTMOUSEBUTTON))
+	if(other->IsOverlapping(mouse) && userInp->GetMouseDown(LEFTMOUSEBUTTON))
 	{
-		std::cout << "Clicked an Entity" << std::endl;
+		std::cout << "Clicked" << std::endl;
 		return true;
 	}
 	else

@@ -1,2 +1,5 @@
-﻿  Entity.cpp
-  Game.vcxproj -> C:\Temp\Wren Work\TurnBasedCardGame\x64\Debug\Game.exe
+﻿  Enemy.cpp
+  Player.cpp
+E:\GitHub\TBCG_Ass_Block_4\Game\Player.cpp(36,89): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Game.vcxproj -> E:\GitHub\TBCG_Ass_Block_4\x64\Debug\Game.exe

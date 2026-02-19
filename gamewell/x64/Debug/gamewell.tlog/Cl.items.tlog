@@ -1,9 +1,9 @@
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\GameScreen.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\GameScreen.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\IDSystem.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\IDSystem.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\Input.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\Input.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\InputManager.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\InputManager.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\Object.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\Object.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\Renderer.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\Renderer.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\SDLSoundSystem.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\SDLSoundSystem.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\Sound.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\Sound.obj
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\TextObject.cpp;C:\Temp\Wren Work\TurnBasedCardGame\gamewell\x64\Debug\TextObject.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\GameScreen.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\GameScreen.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\IDSystem.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\IDSystem.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Input.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\Input.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\InputManager.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\InputManager.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\Object.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Renderer.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\Renderer.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\SDLSoundSystem.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\SDLSoundSystem.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Sound.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\Sound.obj
+E:\GitHub\TBCG_Ass_Block_4\gamewell\TextObject.cpp;E:\GitHub\TBCG_Ass_Block_4\gamewell\x64\Debug\TextObject.obj

@@ -6,20 +6,23 @@ class Combat
 public:
 	Combat(int health, int damage);
 
-	virtual void TurnAction();
+	virtual void TurnAction(Combat* other);
 	virtual void TakeDamage(int damage); //Acts as a setter for current health
 	virtual void SetDamage(int damage); //overload for so can be displayed by player
 
 	bool QueryDead();
+	void SetTarget(Combat* other);
 	
 	int GetMaxHealth();
 	int GetCurrentHealth();
 	int GetAttackDamage();
+	Combat* GetTarget();
 
 
 private:
 	int maxHealth;
 	int currentHealth;
 	int attackDamage;
+	Combat* target;
 };
 

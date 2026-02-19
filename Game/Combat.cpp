@@ -2,7 +2,7 @@
 
 Combat::Combat(int health, int damage) : maxHealth(health), attackDamage(damage), currentHealth(maxHealth) {}
 
-void Combat::TurnAction()
+void Combat::TurnAction(Combat* other)
 {
 	std::cout << "No Functionality Set" << std::endl;
 }
@@ -22,6 +22,11 @@ bool Combat::QueryDead()
 	return (currentHealth <= 0);
 }
 
+void Combat::SetTarget(Combat* other)
+{
+	target = other;
+}
+
 int Combat::GetMaxHealth()
 {
 	return maxHealth;
@@ -35,4 +40,9 @@ int Combat::GetCurrentHealth()
 int Combat::GetAttackDamage()
 {
 	return attackDamage;
+}
+
+Combat* Combat::GetTarget()
+{
+	return target;
 }

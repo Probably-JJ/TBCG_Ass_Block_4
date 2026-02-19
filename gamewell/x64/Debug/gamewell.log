@@ -1,9 +1,8 @@
-﻿  Input.cpp
-C:\Temp\Wren Work\TurnBasedCardGame\gamewell\InputManager.h(6,9): warning C4005: 'KEY': macro redefinition
-  (compiling source file 'Input.cpp')
-      C:\Temp\Wren Work\TurnBasedCardGame\gamewell\Input.h(2,9):
-      see previous definition of 'KEY'
-  
+﻿  Object.cpp
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\GitHub\TBCG_Ass_Block_4\gamewell\Object.cpp(158,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 SDL2_ttf.lib(SDL2_ttf.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2_Mixer.lib(SDL2_mixer.dll); second definition ignored
 SDL2.lib(SDL2.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2_Mixer.lib(SDL2_mixer.dll); second definition ignored
-  gamewell.vcxproj -> C:\Temp\Wren Work\TurnBasedCardGame\x64\Debug\gamewell.lib
+  gamewell.vcxproj -> E:\GitHub\TBCG_Ass_Block_4\x64\Debug\gamewell.lib

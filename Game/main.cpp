@@ -10,16 +10,17 @@
 int main()
 {
 	//TODO:
-	//add tags to enemies
-	//make different action function based on tag
+	//target specific enemies -> enemies need to be stored in array, run check on all to see OnMouseClick(enemy[i]) then player->SetTarget(enemy[i])
+	//combat - death
+	//
 	//game class
 	//game - turn cycle
-	//combat - death
 	// 
 	// 
 	//deck class
 	//class classes
 	//card class
+	//convert player actions to cards
 
 
 	GameScreen screen;
@@ -34,10 +35,14 @@ int main()
 	
 	Input inp;
 	//screen is 1280 x 720
-	Enemy* testEnemy = new Enemy(954, 232, *mouse, 100, 10, "assets/Images/Wren_Evil.bmp", 256);
+	Enemy* testEnemy1 = new Enemy(954, 432, *mouse, 100, 10, "assets/Images/Wren_Evil.bmp", 256, Enemy::ATTACKER);
+	Enemy* testEnemy2 = new Enemy(954, 32, *mouse, 100, 10, "assets/Images/Wren_Evil.bmp", 256, Enemy::ATTACKER);
 	Player* testPlay = new Player(70, 232, *mouse, 100, 10, "assets/Images/Wren_Bird.bmp", 256);
 	int x, y;
 
+
+	testEnemy1->SetTarget(testPlay);
+	testPlay->SetTarget(testEnemy1);
 
 	while (screen.IsRunning())
 	{
@@ -45,8 +50,20 @@ int main()
 		mouse->SetPosition(x, y);
 
 		mouse->Update();
+
 		testPlay->Update();
-		testEnemy->Update();
+		testEnemy1->Update();
+		testEnemy2->Update();
+
+		if (inp.GetKeyDown('t'))
+		{
+			testEnemy1->TurnAction(testEnemy1->GetTarget());
+		}
+
+		if (inp.GetKeyDown('#'))
+		{
+			screen.CloseScreen();
+		}
 
 		screen.Update();
 	}

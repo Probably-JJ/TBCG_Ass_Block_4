@@ -13,10 +13,9 @@ public:
 	~Entity();
 
 	virtual void Init();
-	virtual Object* CreateVisual(const char* filepath);
 
 	//check if the mouse is over the object, allow for displaying extra data or extra functionality
-	bool OnMouseClick(Object other);
+	bool OnMouseClick(Object* other);
 	bool OnMouseRelease();
 	virtual void Update();
 
@@ -31,6 +30,8 @@ public:
 	
 
 protected:
+	virtual Object* CreateVisual(const char* filepath);
+
 	int posX;
 	int posY;
 	int objSize;

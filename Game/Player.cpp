@@ -7,6 +7,15 @@ Player::Player(int X, int Y, const Object& mouse, int health, int damage, const 
 	Init();
 }
 
+Player::~Player()
+{
+	Entity::~Entity();
+	delete healthObj;
+	delete damageObj;
+	delete testAction1;
+	delete testAction2;
+}
+
 void Player::Init()
 {
 	Colour white;
@@ -22,7 +31,12 @@ void Player::Init()
 
 	visualComponent = CreateVisual(filePath);
 	visualComponent->SetShouldCollide(true);
+
+	testAction1 = new Object("assets/Images/Wren_Bird.bmp", GetPosX() + objSize, GetPosY() + (objSize / 2), 64, 64, true);
+	testAction2 = new Object("assets/Images/Wren_Bird.bmp", GetPosX() + objSize, GetPosY() + (objSize / 1.25), 64, 64, true);
+
 	//space for setting card class and deck
+
 }
 
 
@@ -32,9 +46,11 @@ void Player::Update()
 	GetDrawn()->Update();
 	healthObj->Update();
 	damageObj->Update();
+	testAction1->Update();
+	testAction2->Update();
 
 	//check if mouse is over player
-	if (OnMouseClick(*GetDrawn()))
+	if (OnMouseClick(GetDrawn()))
 	{
 		if (!showingData)
 		{
@@ -52,11 +68,24 @@ void Player::Update()
 			showingData = false;
 		}
 	}
+
+	if (OnMouseClick(testAction1))
+	{
+		GetTarget()->TakeDamage(GetAttackDamage()); //gets target, calls the take damage function and passes in damage of player
+	}
+	else if (OnMouseClick(testAction2))
+	{
+		TakeDamage(( -GetAttackDamage() / 2)); //heal PLACEHOLDER need a HEAL function becasue this reads like ASS
+	}
+
 }
 
-void Player::TurnAction()
+void Player::TurnAction(Combat* other)
 {
-	//cards need to be built first
+	
+
+
+	//cards need to be built
 }
 
 void Player::TakeDamage(int damage)
