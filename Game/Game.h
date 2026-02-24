@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <stack>
 #include "Gamewell_api.h"
 
 class Enemy;
@@ -66,6 +67,6 @@ private:
 	Enemy* AtkE2;
 
 	GAMESTATE g_state;
-	TURNSTATE t_state;
+	std::stack<TURNSTATE> t_state;
 };
 
