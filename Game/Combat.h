@@ -10,6 +10,7 @@ public:
 	virtual void TakeDamage(int damage); //Acts as a setter for current health
 	virtual void SetDamage(int damage); //overload for so can be displayed by player
 
+	//returns true if player is dead
 	bool QueryDead();
 	void SetTarget(Combat* other);
 	
