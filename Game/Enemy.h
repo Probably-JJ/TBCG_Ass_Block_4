@@ -12,7 +12,8 @@ public:
 	{
 		ATTACKER,
 		HEALER,
-		BOSS
+		BOSS,
+		OTHER
 	};
 
 	Enemy(int X, int Y, const Object& mouse, int health, int damage, const char* imagePath, int size, TYPE enemyType);
@@ -26,9 +27,22 @@ public:
 
 	void TakeDamage(int damage) override;
 
+	bool GetIgnore();
+
+	//sets the enemy to be ignored
+	void Ignore();
+
+	//resets the health of the enemy
+	//resets the ignore of the enemy
+	void ResetEnemy();
+
+	void Hide();
+
 private:
 	TextObject* healthObj;
 	std::string textData;
 	TYPE tag;
+
+	bool ignore;
 };
 

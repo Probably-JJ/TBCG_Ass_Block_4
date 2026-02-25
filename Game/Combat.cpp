@@ -1,6 +1,14 @@
 #include "combat.h"
 
-Combat::Combat(int health, int damage) : maxHealth(health), attackDamage(damage), currentHealth(maxHealth) {}
+Combat::Combat(int health, int damage) : maxHealth(health), attackDamage(damage), currentHealth(maxHealth), target(nullptr)
+{
+	
+}
+
+Combat::~Combat()
+{
+
+}
 
 void Combat::TurnAction(Combat* other)
 {

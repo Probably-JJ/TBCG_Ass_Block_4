@@ -9,11 +9,26 @@ Player::Player(int X, int Y, const Object& mouse, int health, int damage, const 
 
 Player::~Player()
 {
-	Entity::~Entity();
-	delete healthDataObj;
-	delete damageObj;
-	delete testAction1;
-	delete testAction2;
+	if (healthDataObj != nullptr)
+	{
+		delete healthDataObj;
+	}
+	if (healthObj != nullptr)
+	{
+		delete healthObj;
+	}
+	if (damageObj != nullptr)
+	{
+		delete damageObj;
+	}
+	if (testAction1 != nullptr)
+	{
+		delete testAction1;
+	}
+	if (testAction2 != nullptr)
+	{
+		delete testAction2;
+	}
 }
 
 void Player::Init()
@@ -26,14 +41,18 @@ void Player::Init()
 	textData = "Health: " + std::to_string(GetCurrentHealth()) + "/" + std::to_string(GetMaxHealth());
 	healthDataObj = new TextObject(textData.c_str(), "assets/default.ttf", 10, GetPosX() + (objSize / 2), GetPosY() + (objSize + 10), white, false);
 
+	textData = "Health: " + std::to_string(GetCurrentHealth());
+	healthObj = new TextObject(textData.c_str(), "assets/default.ttf", 20, GetPosX() + (objSize / 2), GetPosY() - (objSize * 0.1), white, true);
+
+
 	textData = "Damage: " + std::to_string(GetAttackDamage());
 	damageObj = new TextObject(textData.c_str(), "assets/default.ttf", 10, GetPosX() + (objSize / 2), GetPosY() + (objSize + 20), white, false);
 
 	visualComponent = CreateVisual(filePath);
 	visualComponent->SetShouldCollide(true);
 
-	testAction1 = new Object("assets/Images/Wren_Bird.bmp", GetPosX() + objSize, GetPosY() + (objSize / 2), 64, 64, true);
-	testAction2 = new Object("assets/Images/Wren_Bird.bmp", GetPosX() + objSize, GetPosY() + (objSize / 1.25), 64, 64, true);
+	testAction1 = new Object("assets/Images/Attack.bmp", GetPosX() + objSize, GetPosY() + (objSize / 2), 64, 64, true);
+	testAction2 = new Object("assets/Images/Heal.bmp", GetPosX() + objSize, GetPosY() + (objSize / 1.25), 64, 64, true);
 
 	actionTaken = false;
 
@@ -48,6 +67,7 @@ void Player::Update()
 {
 	GetDrawn()->Update();
 	healthDataObj->Update();
+	healthObj->Update();
 	damageObj->Update();
 	testAction1->Update();
 	testAction2->Update();
@@ -83,7 +103,7 @@ void Player::SelectAction()
 	}
 	else if (OnMouseClick(testAction2))
 	{
-		selectedAction = ACTION2; //heal PLACEHOLDER need a HEAL function becasue this reads like ASS
+		selectedAction = ACTION2;
 		actionTaken = true;
 	}
 }
@@ -107,6 +127,9 @@ void Player::TakeDamage(int damage)
 	Combat::TakeDamage(damage);
 	textData = "Health: " + std::to_string(GetCurrentHealth()) + "/" + std::to_string(GetMaxHealth());
 	healthDataObj->SetText(textData.c_str());
+
+	textData = "Health: " + std::to_string(GetCurrentHealth());
+	healthObj->SetText(textData.c_str());
 }
 
 void Player::SetDamage(int damage)
@@ -125,6 +148,15 @@ void Player::ResetActionMade()
 {
 	actionTaken = false;
 	selectedAction = NA;
+}
+
+void Player::Hide()
+{
+	GetDrawn()->SetShouldCollide(false);
+	GetDrawn()->SetShouldDraw(false);
+	damageObj->SetShouldDraw(false);
+	healthDataObj->SetShouldDraw(false);
+
 }
 
 

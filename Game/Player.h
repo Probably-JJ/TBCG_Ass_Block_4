@@ -23,9 +23,11 @@ public:
 
 	void Update() override;
 	
+	//Where the Player selects their action
 	void SelectAction();
 
-	void TurnAction(Combat* other) override; //the action the player selects through choosing their card to play 
+	//Where the Selected Action gets played
+	void TurnAction(Combat* other) override;
 
 	void TakeDamage(int damage) override;
 
@@ -37,8 +39,11 @@ public:
 	//used to reset the actionMade bool to false
 	void ResetActionMade();
 
+	void Hide();
+
 private:
 	TextObject* healthDataObj;
+	TextObject* healthObj;
 	TextObject* damageObj;
 	ACTION _action;
 	Object* testAction1;

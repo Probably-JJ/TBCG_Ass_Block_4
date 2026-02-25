@@ -10,7 +10,7 @@ class Entity
 {
 public:
 	Entity(int X, int Y, const Object& mouseObj, const char* imagePath, int size);
-	~Entity();
+	virtual ~Entity();
 
 	virtual void Init();
 

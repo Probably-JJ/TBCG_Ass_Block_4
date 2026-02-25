@@ -30,6 +30,7 @@ class Game
 
 public:
 	Game(GameScreen screen);
+	~Game();
 
 	void Initialise();
 
@@ -48,10 +49,11 @@ public:
 
 	void KillProgram();
 
-	void SetPlayerTarget();
+	//allows e to be clicked then sets the target to them
+	void CheckPlayerTarget(Enemy* e);
 
 private:
-	int mouseX, mouseY, enemyCount;
+	int mouseX, mouseY, enemyCount, roundsRemaining;
 	bool playerWin = false;
 	bool playerLoss = false;
 
@@ -62,6 +64,7 @@ private:
 	Input* userInput;
 	Object* p_targetIndicator;
 
+	Enemy* DUMMYTARGET;
 
 	Enemy* AtkE1;
 	Enemy* AtkE2;

@@ -5,6 +5,7 @@ class Combat
 {
 public:
 	Combat(int health, int damage);
+	~Combat();
 
 	virtual void TurnAction(Combat* other);
 	virtual void TakeDamage(int damage); //Acts as a setter for current health
@@ -20,7 +21,7 @@ public:
 	Combat* GetTarget();
 
 
-private:
+protected:
 	int maxHealth;
 	int currentHealth;
 	int attackDamage;

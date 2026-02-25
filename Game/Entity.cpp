@@ -2,14 +2,21 @@
 #include "Object.h"
 #include "Input.h"
 
-Entity::Entity(int X, int Y, const Object& mouseObj, const char* imagePath, int size) : posX(X), posY(Y), mouse(mouseObj), filePath (imagePath), objSize(size)
+Entity::Entity(int X, int Y, const Object& mouseObj, const char* imagePath, int size) : posX(X), posY(Y), mouse(mouseObj), filePath (imagePath), objSize(size), userInp(nullptr), visualComponent(nullptr)
 {
-	//dont automatically create visual component, would cause issues within child classes 
+	//dont automatically create visual component, would cause issues within child classes
 }
 
 Entity::~Entity()
 {
-	delete visualComponent;
+	if (visualComponent != nullptr)
+	{
+		delete visualComponent;
+	}
+	if (userInp != nullptr)
+	{
+		delete userInp;
+	}
 }
 
 Object* Entity::CreateVisual(const char* filepath)

@@ -8,19 +8,23 @@ Enemy::Enemy(int X, int Y, const Object& mouse, int health, int damage, const ch
 
 Enemy::~Enemy()
 {
-	Entity::~Entity();
-	delete healthObj;
+	if (healthObj != nullptr)
+	{
+		delete healthObj;
+	}
 }
 
 void Enemy::Init()
 {
+	ignore = false;
+
 	Colour white;
 	white.r = 255;
 	white.g = 128;
 	white.b = 128;
 
 	textData = "Health: " + std::to_string(GetCurrentHealth());
-	healthObj = new TextObject(textData.c_str(), "assets/default.ttf", 10, GetPosX() + (objSize / 2), GetPosY() + objSize + 10, white, true);
+	healthObj = new TextObject(textData.c_str(), "assets/default.ttf", 15, GetPosX() + (objSize * 0.4), GetPosY() + (objSize * 0.95), white, true);
 
 	visualComponent = CreateVisual(filePath);
 	visualComponent->SetShouldCollide(true);
@@ -62,4 +66,29 @@ void Enemy::TakeDamage(int damage)
 	healthObj->SetText(textData.c_str());
 }
 
+bool Enemy::GetIgnore()
+{
+	return ignore;
+}
+
+void Enemy::Ignore()
+{
+	ignore = true;
+}
+
+void Enemy::ResetEnemy()
+{
+	currentHealth = maxHealth;
+	ignore = false;
+	textData = "Health: " + std::to_string(GetCurrentHealth());
+	healthObj->SetText(textData.c_str());
+}
+
+void Enemy::Hide()
+{
+	GetDrawn()->SetShouldCollide(false);
+	GetDrawn()->SetShouldDraw(false);
+	healthObj->SetShouldDraw(false);
+	Ignore();
+}
 

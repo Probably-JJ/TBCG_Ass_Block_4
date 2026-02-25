@@ -29,7 +29,6 @@ int main()
 	}
 
 	Game game(screen);
-	game.Initialise();
 
 	while (game.IsRunning())
 	{

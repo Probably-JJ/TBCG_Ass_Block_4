@@ -2,11 +2,39 @@
 #include "Player.h"
 #include "Enemy.h"
 
-#define OUTSTATE std::cout << g_state << std::endl
+#define OUT std::cout << 
 
 Game::Game(GameScreen screen) : m_screen(screen)
 {
 	Initialise();
+}
+
+Game::~Game()
+{
+	if (AtkE1 != nullptr)
+	{
+		delete AtkE1;
+	}
+	if (AtkE2 != nullptr)
+	{
+		delete AtkE2;
+	}
+	if (mouse != nullptr)
+	{
+		delete mouse;
+	}
+	if (player != nullptr)
+	{
+		delete player;
+	}
+	if (DUMMYTARGET != nullptr)
+	{
+		delete DUMMYTARGET;
+	}
+	if (userInput != nullptr)
+	{
+		delete userInput;
+	}
 }
 
 void Game::Initialise()
@@ -14,35 +42,63 @@ void Game::Initialise()
 	//locks game out of other logic until needed
 	g_state = INIT;
 	t_state.push(INITIALISING);
+	roundsRemaining = 1;
 
+	m_screen.SetBackgroundRGB(25, 25, 25);
+
+
+	if (AtkE1 != nullptr)
+	{
+		delete AtkE1;
+	}
+	if (AtkE2 != nullptr)
+	{
+		delete AtkE2;
+	}
+	if (mouse != nullptr)
+	{
+		delete mouse;
+	}
+	if (player != nullptr)
+	{
+		delete player;
+	}
+	if (DUMMYTARGET != nullptr)
+	{
+		delete DUMMYTARGET;
+	}
 	//screen is 1280 x 720
 
-	mouse = new Object("assets/Images/Wren_Bird.bmp", 0, 0, 32, 32, true);
+	mouse = new Object("assets/Images/Cursor.bmp", 0, 0, 32, 32, true);
 	mouse->SetShouldCollide(true);
 
-	p_targetIndicator = new Object("assets/Images/Wren_Bird.bmp", 0, 0, 32, 32, true);
+	p_targetIndicator = new Object("assets/Images/Target.bmp", 0, 0, 32, 32, false);
 
 
-	player = new Player(70, 232, *mouse, 100, 10, "assets/Images/Wren_Bird.bmp", 256);
+	player = new Player(70, 232, *mouse, 100, 15, "assets/Images/Wren_Bird.bmp", 256);
 
 
 
 	//should later be moved to a round-round init
-	AtkE1 = new Enemy(954, 432, *mouse, 100, 10, "assets/Images/Wren_Evil.bmp", 256, Enemy::ATTACKER);
+	DUMMYTARGET = new Enemy(0, 0, *mouse, 9999, 0, "assets/Images/Wren_Evil.bmp", 1, Enemy::OTHER);
+	DUMMYTARGET->Hide();
+
+
+	AtkE1 = new Enemy(954, 432, *mouse, 30, 5, "assets/Images/Wren_Evil.bmp", 256, Enemy::ATTACKER);
 	enemyCount++;
-	AtkE2 = new Enemy(954, 32, *mouse, 100, 10, "assets/Images/Wren_Evil.bmp", 256, Enemy::ATTACKER);
+	AtkE2 = new Enemy(954, 32, *mouse, 30, 5, "assets/Images/Wren_Evil.bmp", 256, Enemy::ATTACKER);
 	enemyCount++;
 
-	//enemies.push_back(AtkE1);
-	//enemies.push_back(AtkE2);
+	enemies.push_back(AtkE1);
+	enemies.push_back(AtkE2);
 
-	//for (Enemy* e : enemies)
-	//{
-	//	e->SetTarget(GetPlayer());
-	//}
+	for (Enemy* e : enemies)
+	{
+		e->SetTarget(GetPlayer());
+	}
 
 	//test
-	player->SetTarget(AtkE1);
+	player->SetTarget(DUMMYTARGET);
 	AtkE1->SetTarget(GetPlayer());
 	AtkE2->SetTarget(GetPlayer());
 
@@ -70,6 +126,10 @@ void Game::Run()
 	{
 		//choose cards
 		//init round
+		AtkE1->ResetEnemy();
+		AtkE2->ResetEnemy();
+
+		roundsRemaining--;
 		//then change state
 		g_state = RUNNING_TURNS;
 	}
@@ -78,8 +138,10 @@ void Game::Run()
 	{
 		//player and enemies only need updating if the core loop is active
 		player->Update();
+		p_targetIndicator->Update();
 		AtkE1->Update();
 		AtkE2->Update();
+		DUMMYTARGET->Update();
 
 		//the vector currently breaks the health readout.
 		//for (Enemy* e : enemies)
@@ -94,7 +156,14 @@ void Game::Run()
 	else if (g_state == GAMEOVER)
 	{
 		//if win
-		//if loss
+		if (playerWin)
+		{
+			m_screen.SetBackgroundRGB(0, 255, 0);
+		}
+		if (playerLoss)
+		{
+			m_screen.SetBackgroundRGB(255, 0, 0);
+		}
 		//run appropirate logic
 	}
 
@@ -105,7 +174,7 @@ void Game::Run()
 		g_state = KILLING;
 		KillProgram();
 	}
-	m_screen.Update();
+	else m_screen.Update();
 }
 
 bool Game::IsRunning()
@@ -131,6 +200,9 @@ void Game::RunTurnCycle()
 	if (t_state.top() == INITIALISING)
 	{
 		GetPlayer()->ResetActionMade();
+		GetPlayer()->SetTarget(DUMMYTARGET);
+		p_targetIndicator->SetShouldDraw(false);
+
 
 		//statestack
 		t_state.push(CHECK_WIN_LOSS);
@@ -141,7 +213,22 @@ void Game::RunTurnCycle()
 
 	else if (t_state.top() == PLAYER_CHOOSE)
 	{
-		if (!GetPlayer()->GetActionMade())
+		//where the player selects their target
+		CheckPlayerTarget(AtkE1);
+		CheckPlayerTarget(AtkE2);
+
+		//if player hasn't selected an action & Target = DUMMY
+		//Select Action
+		if (!GetPlayer()->GetActionMade() && (GetPlayer()->GetTarget() == DUMMYTARGET))
+		{
+			GetPlayer()->SelectAction();
+		}
+		else if (GetPlayer()->GetTarget() == DUMMYTARGET)
+		{
+			GetPlayer()->ResetActionMade();
+			//idicate to select target
+		}
+		else if (!GetPlayer()->GetActionMade())
 		{
 			GetPlayer()->SelectAction();
 		}
@@ -151,18 +238,42 @@ void Game::RunTurnCycle()
 		}
 	}
 
+	//separate state due to potential for multiple actions
 	else if (t_state.top() == PLAYER_ACTIONS)
 	{
 		GetPlayer()->TurnAction(GetPlayer()->GetTarget());
-		//separate state due to potential for multiple actions
 		t_state.pop();
 	}
 
 	else if (t_state.top() == ENEMY_ACTIONS)
 	{
 		//replace with iteration through vec
-		AtkE1->TurnAction(AtkE1->GetTarget());
-		AtkE2->TurnAction(AtkE2->GetTarget());
+		 
+		 
+		//check enemy health, if they are dead, remove their attacks
+		if (!AtkE1->QueryDead() && !AtkE1->GetIgnore())
+		{
+			AtkE1->TurnAction(AtkE1->GetTarget());
+		}
+		else if(!AtkE1->GetIgnore())
+		{
+			//stops the enemy from being able to be seen and selected as a target
+			enemyCount--;
+			AtkE1->Hide();
+		}
+
+
+		if (!AtkE2->QueryDead() && !AtkE2->GetIgnore())
+		{
+			AtkE2->TurnAction(AtkE2->GetTarget());
+		}
+		else if(!AtkE2->GetIgnore())
+		{
+			//stops the enemy from being able to be seen and selected as a target
+			enemyCount--;
+			AtkE2->Hide();
+		}
+
 
 		t_state.pop();
 	}
@@ -171,15 +282,19 @@ void Game::RunTurnCycle()
 	{
 		if (enemyCount == 0)
 		{
-			playerWin = true;
 			//next round
 			//g_state = Initialising round
+
+			//if rounds remaining = 0
+			playerWin = true;
+			g_state = GAMEOVER;
 		}
 		else if (GetPlayer()->QueryDead())
 		{
 			playerLoss = true;
-			//g_state gameover
+			g_state = GAMEOVER;
 		}
+
 		t_state.pop();
 	}
 }
@@ -187,22 +302,29 @@ void Game::RunTurnCycle()
 void Game::KillProgram()
 {
 	m_screen.CloseScreen();
-	delete mouse;
-	delete player;
 
 	//delete enemies from end of vector and reverse iterate through;
 	// i = enemies.end();?
 }
 
-void Game::SetPlayerTarget()
+void Game::CheckPlayerTarget(Enemy* e)
 {
-	for (Enemy* e : enemies)
+	//for (Enemy* e : enemies)
+	//{
+	//	//check if enemy has been clicked
+	//	if (e->GetDrawn()->IsOverlapping(*mouse) && e->OnMouseClick(e->GetDrawn()))
+	//	{
+	//		GetPlayer()->SetTarget(e);
+	//		p_targetIndicator->SetPosition(e->GetPosX(), e->GetPosY());
+	//	}
+	//}
+
+
+	//check if enemy has been clicked
+	if (e->GetDrawn()->IsOverlapping(*mouse) && e->OnMouseClick(e->GetDrawn()))
 	{
-		//check if enemy has been clicked
-		if (e->GetDrawn()->IsOverlapping(*mouse) && e->OnMouseClick(e->GetDrawn()))
-		{
-			GetPlayer()->SetTarget(e);
-			p_targetIndicator->SetPosition(e->GetPosX(), e->GetPosY());
-		}
+		GetPlayer()->SetTarget(e);
+		p_targetIndicator->SetPosition(e->GetPosX(), e->GetPosY());
+		p_targetIndicator->SetShouldDraw(true);
 	}
 }
