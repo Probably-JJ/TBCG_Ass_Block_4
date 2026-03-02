@@ -7,6 +7,9 @@ class Enemy;
 class Player;
 class Game
 {
+	//when restructuring this part of my code in future, each state would be divided into classes
+	//this change in structure would not only be better as all logic would be hidden from each other
+	//but it would also be much cleaner and easier to read through
 	enum GAMESTATE
 	{
 		INIT,

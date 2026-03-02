@@ -129,6 +129,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Card.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Card.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Entity.h" />
