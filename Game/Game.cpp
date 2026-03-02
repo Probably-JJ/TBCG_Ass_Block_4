@@ -113,60 +113,67 @@ void Game::Run()
 	mouse->SetPosition(mouseX, mouseY);
 	mouse->Update();
 
-	if (g_state == MENU)
+
+	switch (g_state)
 	{
-		//main menu
-
-
-		//DEGUG
-		g_state = INTER_ROUND;
-	}
-
-	else if (g_state == INTER_ROUND)
-	{
-		//choose cards
-		//init round
-		AtkE1->ResetEnemy();
-		AtkE2->ResetEnemy();
-
-		roundsRemaining--;
-		//then change state
-		g_state = RUNNING_TURNS;
-	}
-
-	else if (g_state == RUNNING_TURNS)
-	{
-		//player and enemies only need updating if the core loop is active
-		player->Update();
-		p_targetIndicator->Update();
-		AtkE1->Update();
-		AtkE2->Update();
-		DUMMYTARGET->Update();
-
-		//the vector currently breaks the health readout.
-		//for (Enemy* e : enemies)
-		//{
-		//	e->Update();
-		//}
-
-
-		RunTurnCycle();
-	}
-
-	else if (g_state == GAMEOVER)
-	{
-		//if win
-		if (playerWin)
+		case MENU:
 		{
-			m_screen.SetBackgroundRGB(0, 255, 0);
-		}
-		if (playerLoss)
-		{
-			m_screen.SetBackgroundRGB(255, 0, 0);
-		}
-		//run appropirate logic
-	}
+			//main menu
 
+
+			//DEGUG
+			g_state = INTER_ROUND;
+			break;
+		}
+
+		case INTER_ROUND:
+		{
+			//choose cards
+			//init round
+			AtkE1->ResetEnemy();
+			AtkE2->ResetEnemy();
+
+			roundsRemaining--;
+			//then change state
+			g_state = RUNNING_TURNS;
+			break;
+		}
+
+		case RUNNING_TURNS:
+		{
+			//player and enemies only need updating if the core loop is active
+			player->Update();
+			p_targetIndicator->Update();
+			AtkE1->Update();
+			AtkE2->Update();
+			DUMMYTARGET->Update();
+
+			//the vector currently breaks the health readout.
+			//for (Enemy* e : enemies)
+			//{
+			//	e->Update();
+			//}
+
+
+			RunTurnCycle();
+			break;
+		}
+
+		case GAMEOVER:
+		{
+			//if win
+			if (playerWin)
+			{
+				m_screen.SetBackgroundRGB(0, 255, 0);
+			}
+			if (playerLoss)
+			{
+				m_screen.SetBackgroundRGB(255, 0, 0);
+			}
+			//run appropirate logic
+			break;
+		}
+	}
 
 	//closes the game
 	if (userInput->GetKeyDown('#'))

@@ -2,8 +2,12 @@
 #include "Entity.h"
 #include "Combat.h"
 
-class TextObject;
+//I am unhappy with how this structure works. In future I would change it so Entity and Combat both are parent classes to a "CombatEntity" class
+//The reason for this change is due to how much shared information both the enemies and player have 
+//However their parent classes do not share this nore do either of them require these functions
+//There is also a large amount of cross over in their stored variables too.
 
+class TextObject;
 class Player : public Entity, public Combat
 {
 	enum ACTION
