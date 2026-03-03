@@ -54,6 +54,12 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="HealCard.cpp">
+      <Filter>Source Files\CardSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleCombatant.cpp">
+      <Filter>Source Files\CardSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -85,6 +91,12 @@
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="HealCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleCombatant.h">
+      <Filter>Header Files\CardSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,9 @@
 #pragma once
+
+class ICard;
 class ITarget
 {
 public:
-	virtual void ApplyCard() = 0;
+	virtual void ApplyCard(ICard* card) = 0;
 };
 

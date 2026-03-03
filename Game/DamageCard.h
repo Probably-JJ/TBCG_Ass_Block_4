@@ -1,6 +1,6 @@
 #pragma once
 #include "ICard.h"
-#include "Entity.h"
+
 
 class DamageCard : public ICard
 {

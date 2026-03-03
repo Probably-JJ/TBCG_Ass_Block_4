@@ -1,6 +1,8 @@
 #include "Game.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "CardInfo.h"
+#include "ICard.h"
 
 #define OUT std::cout << 
 
@@ -45,7 +47,6 @@ void Game::Initialise()
 	roundsRemaining = 1;
 
 	m_screen.SetBackgroundRGB(25, 25, 25);
-
 
 	if (AtkE1 != nullptr)
 	{
@@ -101,6 +102,13 @@ void Game::Initialise()
 	player->SetTarget(DUMMYTARGET);
 	AtkE1->SetTarget(GetPlayer());
 	AtkE2->SetTarget(GetPlayer());
+
+	//card test
+	CardInfo* C_Damage = new CardInfo(*mouse, "assets/Images/Attack.bmp", 32);
+	C_Damage->Build("TestCard1 DamageCard 20 10")->Apply(player->GetTarget());
+
+
+
 
 	//enter menu after finishing Initialisation
 	g_state = MENU;
