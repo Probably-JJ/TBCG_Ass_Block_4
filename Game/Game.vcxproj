@@ -131,7 +131,7 @@
   <ItemGroup>
     <ClCompile Include="CardInfo.cpp" />
     <ClCompile Include="DamageCard.cpp" />
-    <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="DeckManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -144,7 +144,7 @@
   <ItemGroup>
     <ClInclude Include="CardInfo.h" />
     <ClInclude Include="DamageCard.h" />
-    <ClInclude Include="Deck.h" />
+    <ClInclude Include="DeckManager.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Entity.h" />
@@ -152,6 +152,7 @@
     <ClInclude Include="HealCard.h" />
     <ClInclude Include="ICard.h" />
     <ClInclude Include="ITarget.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SingleCombatant.h" />
   </ItemGroup>

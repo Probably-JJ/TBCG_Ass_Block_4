@@ -105,7 +105,7 @@ void Game::Initialise()
 
 	//card test
 	CardInfo* C_Damage = new CardInfo(*mouse, "assets/Images/Attack.bmp", 32);
-	C_Damage->Build("TestCard1 DamageCard 20 10")->Apply(player->GetTarget());
+	C_Damage->Build("TestCard1 DamageCard 20 10")->Apply(player->GetTarget()); //build returns and ICard;
 
 
 

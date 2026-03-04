@@ -2,6 +2,7 @@
 #include <string>
 #include "Entity.h"
 
+
 class ICard;
 class ITarget;
 class CardInfo : public Entity
@@ -14,7 +15,7 @@ public:
 	std::string GetCardName();
 	ICard* GetCard();
 	int GetCardWeight();
-	//ITarget* GetTarget(); removed for scoping
+	//ITarget* GetTarget(); removed for scoping reasons
 
 	//Sets the values of the card with parsed in information
 	//File Structure: Name CardType Value CardWeight

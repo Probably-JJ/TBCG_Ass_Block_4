@@ -1,17 +1,22 @@
 #include "HealCard.h"
 #include "Combat.h"
+#include "Object.h"
 
-HealCard::HealCard(int healValue) : m_healAmount(healValue)
+
+HealCard::HealCard(int healValue, const Object& mouse, const char* imagePath, int size) : Entity(0, 0, mouse, imagePath, size), m_healAmount(healValue), played(false)
 {
 	Init();
 }
 
 void HealCard::Init()
 {
-
+	visualComponent = CreateVisual(filePath);
+	visualComponent->SetShouldCollide(true);
+	visualComponent->SetShouldDraw(false);
 }
 
 void HealCard::Apply(Combat* target)
 {
 	target->TakeDamage(-m_healAmount);
+	played = true;
 }

@@ -33,9 +33,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Deck.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CardInfo.cpp">
       <Filter>Source Files\CardSystem</Filter>
     </ClCompile>
@@ -60,12 +57,12 @@
     <ClCompile Include="SingleCombatant.cpp">
       <Filter>Source Files\CardSystem</Filter>
     </ClCompile>
+    <ClCompile Include="DeckManager.cpp">
+      <Filter>Source Files\CardSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ICard.h">
@@ -92,10 +89,16 @@
     <ClInclude Include="Entity.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="SingleCombatant.h">
+      <Filter>Header Files\CardSystem</Filter>
+    </ClInclude>
     <ClInclude Include="HealCard.h">
+      <Filter>Header Files\CardSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SingleCombatant.h">
+    <ClInclude Include="DeckManager.h">
       <Filter>Header Files\CardSystem</Filter>
     </ClInclude>
   </ItemGroup>

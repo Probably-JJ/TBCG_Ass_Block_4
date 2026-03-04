@@ -31,8 +31,7 @@ CardInfo::~CardInfo()
 
 void CardInfo::Init()
 {
-	visualComponent = CreateVisual(filePath);
-	visualComponent->SetShouldCollide(true);
+
 }
 
 #pragma region Getters
@@ -68,12 +67,12 @@ ICard* CardInfo::Build(std::string parsedFileLine)
 
 	if (cardType == "DamageCard")
 	{
-		card = new DamageCard(cardValue);
+		card = new DamageCard(cardValue, mouse, filePath, objSize);
 		return card;
 	}
 	else if (cardType == "HealCard")
 	{
-		card = new HealCard(cardValue);
+		card = new HealCard(cardValue, mouse, filePath, objSize);
 		return card;
 	}
 }

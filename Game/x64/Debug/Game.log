@@ -1,12 +1,6 @@
 ﻿  Enemy.cpp
-C:\Git\TBCG_Ass_Block_4\Game\Enemy.cpp(27,112): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Git\TBCG_Ass_Block_4\Game\Enemy.cpp(27,83): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Combat.cpp
-  Entity.cpp
-  Game.cpp
-  main.cpp
-  Player.cpp
-C:\Git\TBCG_Ass_Block_4\Game\Player.cpp(45,110): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Git\TBCG_Ass_Block_4\Game\Player.cpp(55,84): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Temp\Wren Work\TurnBasedCardGame\Game\Enemy.cpp(27,112): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Temp\Wren Work\TurnBasedCardGame\Game\Enemy.cpp(27,83): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  SingleCombatant.cpp
   Generating Code...
-  Game.vcxproj -> C:\Git\TBCG_Ass_Block_4\x64\Debug\Game.exe
+  Game.vcxproj -> C:\Temp\Wren Work\TurnBasedCardGame\x64\Debug\Game.exe

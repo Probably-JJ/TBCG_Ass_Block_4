@@ -1,0 +1,4 @@
+BigAttack DamageCard 20 9
+SuperAttack DamageCard 40 1
+Restore HealCard 15 9
+TrueRestore HealCard 50 1
