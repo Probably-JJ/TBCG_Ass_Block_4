@@ -82,6 +82,10 @@ void Enemy::ResetEnemy()
 	ignore = false;
 	textData = "Health: " + std::to_string(GetCurrentHealth());
 	healthObj->SetText(textData.c_str());
+
+	GetDrawn()->SetShouldCollide(true);
+	GetDrawn()->SetShouldDraw(true);
+	healthObj->SetShouldDraw(true);
 }
 
 void Enemy::Hide()

@@ -20,3 +20,23 @@ void HealCard::Apply(Combat* target)
 	target->TakeDamage(-m_healAmount);
 	played = true;
 }
+
+Object* HealCard::GetObject()
+{
+	return GetDrawn();
+}
+
+int HealCard::GetCardType()
+{
+	return 2;
+}
+
+bool HealCard::GetPlayed()
+{
+	return played;
+}
+
+void HealCard::Reset()
+{
+	played = false;
+}

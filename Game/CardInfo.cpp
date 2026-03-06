@@ -9,7 +9,7 @@
 
 
 
-CardInfo::CardInfo(const Object& mouse, const char* imagePath, int size) : Entity(0, 0, mouse, imagePath, size), cardName("NO_NAME"), /*target(nullptr),*/ card(nullptr), cardWeight(1)
+CardInfo::CardInfo(const Object& mouse) : cardName("NO_NAME"), /*target(nullptr),*/ card(nullptr), cardWeight(1), mouseRef(mouse)
 {
 	Init();
 }
@@ -60,19 +60,20 @@ ICard* CardInfo::Build(std::string parsedFileLine)
 {
 	//File Structure: Name CardType Value CardWeight
 	std::istringstream iss(parsedFileLine);
-	std::string cardType;
+	std::string cardType, filePath;
 	int cardValue;
 
-	iss >> cardName >> cardType >> cardValue >> cardWeight;
+	//card Weight is currently ignored due to decksystem not being built
+	iss >> cardName >> cardType >> cardValue >> cardWeight >> filePath;
 
 	if (cardType == "DamageCard")
 	{
-		card = new DamageCard(cardValue, mouse, filePath, objSize);
+		card = new DamageCard(cardValue, mouseRef, filePath.c_str(), 128);
 		return card;
 	}
 	else if (cardType == "HealCard")
 	{
-		card = new HealCard(cardValue, mouse, filePath, objSize);
+		card = new HealCard(cardValue, mouseRef, filePath.c_str(), 128);
 		return card;
 	}
 }

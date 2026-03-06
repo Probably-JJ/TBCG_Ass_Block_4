@@ -5,11 +5,15 @@
 
 class Enemy;
 class Player;
+class CardInfo;
+class Entity;
+class Button;
 class Game
 {
 	//when restructuring this part of my code in future, each state would be divided into classes
 	//this change in structure would not only be better as all logic would be hidden from each other
 	//but it would also be much cleaner and easier to read through
+	//this current structure is extremely unreadable and messy.
 	enum GAMESTATE
 	{
 		INIT,
@@ -57,8 +61,12 @@ public:
 
 private:
 	int mouseX, mouseY, enemyCount, roundsRemaining;
-	bool playerWin = false;
-	bool playerLoss = false;
+	bool playerWin;
+	bool playerLoss;
+
+	std::string m_textData;
+
+	TextObject* displayAlert;
 
 	std::vector<Enemy*> enemies;
 	GameScreen m_screen;
@@ -74,5 +82,17 @@ private:
 
 	GAMESTATE g_state;
 	std::stack<TURNSTATE> t_state;
+
+	bool textUpdated;
+	TextObject* closeInfo;
+	Button* m_playButton;
+	Button* m_replayButton;
+	Sound* soundPlayer;
+	SFXID clickSFX;
+
+	//replacing the deck as that system wasnt finished
+	CardInfo* m_hand[4];
+	bool handBuilt;
+
 };
 

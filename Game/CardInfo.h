@@ -5,10 +5,10 @@
 
 class ICard;
 class ITarget;
-class CardInfo : public Entity
+class CardInfo
 {
 public:
-	CardInfo(const Object& mouse, const char* imagePath, int size);
+	CardInfo(const Object& mouse);
 	~CardInfo();
 	void Init();
 
@@ -27,5 +27,7 @@ private:
 	//ITarget* target;
 	ICard* card;
 	int cardWeight;
+
+	const Object& mouseRef;
 };
 

@@ -11,6 +11,11 @@ public:
 
 	void Init() override;
 	void Apply(Combat* target) override;
+	Object* GetObject() override;
+	int GetCardType() override;
+	bool GetPlayed() override;
+	void Reset() override;
+
 
 private:
 	int m_healAmount;

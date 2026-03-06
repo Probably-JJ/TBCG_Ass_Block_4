@@ -7,6 +7,7 @@
 //However their parent classes do not share this nore do either of them require these functions
 //There is also a large amount of cross over in their stored variables too.
 
+class ICard;
 class TextObject;
 class Player : public Entity, public Combat
 {
@@ -14,9 +15,15 @@ class Player : public Entity, public Combat
 	{
 		NA,
 		ACTION1,
-		ACTION2
+		ACTION2,
+		CARD
 	};
 
+	enum CARDTYPES
+	{
+		DAMAGECARD = 1,
+		HEALCARD = 2
+	};
 
 
 public:
@@ -29,6 +36,7 @@ public:
 	
 	//Where the Player selects their action
 	void SelectAction();
+	void SelectAction(ICard* card);
 
 	//Where the Selected Action gets played
 	void TurnAction(Combat* other) override;
@@ -58,5 +66,7 @@ private:
 
 	std::string textData;
 	bool showingData;
+
+	ICard* selectedCard;
 };
 

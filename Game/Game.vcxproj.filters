@@ -60,6 +60,9 @@
     <ClCompile Include="DeckManager.cpp">
       <Filter>Source Files\CardSystem</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="DeckManager.h">
       <Filter>Header Files\CardSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

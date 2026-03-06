@@ -47,6 +47,10 @@ int Entity::GetPosY()
 
 Object* Entity::GetDrawn()
 {
+	if (visualComponent == nullptr)
+	{
+		visualComponent = CreateVisual(filePath);
+	}
 	return visualComponent;
 }
 

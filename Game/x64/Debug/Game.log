@@ -1,6 +1,1 @@
-﻿  Enemy.cpp
-C:\Temp\Wren Work\TurnBasedCardGame\Game\Enemy.cpp(27,112): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Temp\Wren Work\TurnBasedCardGame\Game\Enemy.cpp(27,83): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  SingleCombatant.cpp
-  Generating Code...
-  Game.vcxproj -> C:\Temp\Wren Work\TurnBasedCardGame\x64\Debug\Game.exe
+﻿  Game.vcxproj -> E:\GitHub\TBCG_Ass_Block_4\x64\Debug\Game.exe

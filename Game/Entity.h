@@ -31,7 +31,6 @@ public:
 
 protected:
 	virtual Object* CreateVisual(const char* filepath);
-
 	int posX;
 	int posY;
 	int objSize;

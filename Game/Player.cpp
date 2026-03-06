@@ -1,6 +1,8 @@
 #include "Player.h"
 #include "TextObject.h"
 #include "Input.h"
+#include "ICard.h"
+
 
 Player::Player(int X, int Y, const Object& mouse, int health, int damage, const char* imagePath, int size) : Entity(X, Y, mouse, imagePath, size), Combat(health, damage)
 {
@@ -72,6 +74,12 @@ void Player::Update()
 	testAction1->Update();
 	testAction2->Update();
 
+	if (currentHealth > maxHealth)
+	{
+		currentHealth = maxHealth;
+	}
+
+
 	//check if mouse is over player
 	if (OnMouseClick(GetDrawn()))
 	{
@@ -108,6 +116,16 @@ void Player::SelectAction()
 	}
 }
 
+void Player::SelectAction(ICard* card)
+{
+	if (OnMouseClick(card->GetObject()))
+	{
+		selectedAction = CARD;
+		selectedCard = card;
+		actionTaken = true;
+	}
+}
+
 void Player::TurnAction(Combat* other)
 {
 	if (selectedAction == ACTION1)
@@ -116,11 +134,22 @@ void Player::TurnAction(Combat* other)
 	}
 	else if (selectedAction == ACTION2)
 	{
-		TakeDamage(( -GetAttackDamage() / 2)); //heal PLACEHOLDER need a HEAL function becasue this reads like ASS
+		TakeDamage(( -GetAttackDamage() / 2)); //this should be replaced with a better function name or an entirely new function for readability
 	}
-
-	//cards need to be built
+	else if (selectedAction == CARD)
+	{
+		if (selectedCard->GetCardType() == DAMAGECARD)
+		{
+			selectedCard->Apply(GetTarget());
+		}
+		
+		else if (selectedCard->GetCardType() == HEALCARD)
+		{
+			selectedCard->Apply(this);
+		}
+	}
 }
+
 
 void Player::TakeDamage(int damage)
 {
