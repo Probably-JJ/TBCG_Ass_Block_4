@@ -55,6 +55,18 @@ Game::~Game()
 	{
 		delete closeInfo;
 	}
+	if (m_playButton != nullptr)
+	{
+		delete m_playButton;
+	}
+	if (m_replayButton != nullptr)
+	{
+		delete m_replayButton;
+	}
+	if (soundPlayer != nullptr)
+	{
+		delete soundPlayer;
+	}
 }
 
 void Game::Initialise()
@@ -112,6 +124,19 @@ void Game::Initialise()
 		delete closeInfo;
 		closeInfo = nullptr;
 	}
+
+	if (m_replayButton != nullptr)
+	{
+		delete m_replayButton;
+		m_replayButton = nullptr;
+	}
+
+	if (m_playButton != nullptr)
+	{
+		delete m_playButton;
+		m_playButton = nullptr;
+	}
+
 
 	//screen is 1280 x 720
 	mouse = new Object("assets/Images/Cursor.bmp", 0, 0, 16, 16, true);

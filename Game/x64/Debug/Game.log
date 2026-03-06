@@ -1,1 +1,6 @@
-﻿  Game.vcxproj -> E:\GitHub\TBCG_Ass_Block_4\x64\Debug\Game.exe
+﻿  Game.cpp
+E:\GitHub\TBCG_Ass_Block_4\Game\Game.cpp(163,7): warning C4101: 'value': unreferenced local variable
+E:\GitHub\TBCG_Ass_Block_4\Game\Game.cpp(163,14): warning C4101: 'weight': unreferenced local variable
+  main.cpp
+  Generating Code...
+  Game.vcxproj -> E:\GitHub\TBCG_Ass_Block_4\x64\Debug\Game.exe
